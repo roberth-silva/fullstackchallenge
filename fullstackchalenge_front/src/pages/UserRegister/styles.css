@@ -1,13 +1,14 @@
-#page-auction-form {
+#page-auction-register {
     width: 100vw;
     height: 100vh;
+    margin-top: 400px;
   }
   
-  #page-auction-form .page-header .header-content {
+  #page-auction-register .page-header .header-content {
     margin-bottom: 6.4rem;
   }
   
-  #page-auction-form main {
+  #page-auction-register main {
     background: var(--color-box-base);
     width: 100%;
     max-width: 74rem;
@@ -17,16 +18,16 @@
     overflow: hidden;
   }
   
-  #page-auction-form main fieldset {
+  #page-auction-register main fieldset {
     border: 0;
     padding: 0 2.4rem;
   }
   
-  #page-auction-form main fieldset + fieldset {
+  #page-auction-register main fieldset + fieldset {
     margin-top: 6.4rem;
   }
   
-  #page-auction-form main fieldset legend {
+  #page-auction-register main fieldset legend {
     font: 700 2.4rem Archivo;
     color: var(--color-text-title);
     margin-bottom: 2.4rem;
@@ -38,7 +39,7 @@
     border-bottom: 1px solid var(--color-line-in-white);
   }
   
-  #page-auction-form main fieldset legend button {
+  #page-auction-register main fieldset legend button {
     background: none;
     border: 0;
     color: var(--color-primary);
@@ -47,27 +48,27 @@
     transition: color 0.2s;
   }
   
-  #page-auction-form main fieldset legend button:hover {
+  #page-auction-register main fieldset legend button:hover {
     color: var(--color-primary-dark);
   }
   
-  #page-auction-form main fieldset .input-block + .textarea-block,
-  #page-auction-form main fieldset .select-block + .input-block {
+  #page-auction-register main fieldset .input-block + .textarea-block,
+  #page-auction-register main fieldset .select-block + .input-block {
     margin-top: 2.4rem;
   }
   
-  #page-auction-form main label {
+  #page-auction-register main label {
     color: var(--color-text-complement);
   }
   
-  #page-auction-form main footer {
+  #page-auction-register main footer {
     padding: 4rem 2.4rem;
     background: var(--color-box-footer);
     border-top: 1px solid var(--color-line-in-white);
     margin-top: 6.4rem;
   }
   
-  #page-auction-form main footer p {
+  #page-auction-register main footer p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,11 +77,11 @@
     color: var(--color-text-complement);
   }
   
-  #page-auction-form main footer p img {
+  #page-auction-register main footer p img {
     margin-right: 2rem;
   }
   
-  #page-auction-form main footer button {
+  #page-auction-register main footer button {
     width: 100%;
     height: 5.6rem;
     background: var(--color-secundary);
@@ -97,45 +98,45 @@
     margin-top: 3.2rem;
   }
   
-  #page-auction-form main footer button:hover {
+  #page-auction-register main footer button:hover {
     background-color: var(--color-secundary-dark);
   }
   
   @media (min-width: 700px) {
-    #page-auction-form {
+    #page-auction-register {
       max-width: 100vw;
     }
   
-    #page-auction-form .page-header .header-content {
+    #page-auction-register .page-header .header-content {
       margin-bottom: 0;
     }
   
-    #page-auction-form main fieldset {
+    #page-auction-register main fieldset {
       padding: 0 6.4rem;
     }
   
-    #page-auction-form main .auction-item {
+    #page-auction-register main .auction-item {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       column-gap: 1.6rem;
     }
   
-    #page-auction-form main .auction-item .input-block {
+    #page-auction-register main .auction-item .input-block {
       margin-top: 0 !important;
     }
   
-    #page-auction-form main footer {
+    #page-auction-register main footer {
       padding: 4rem 6.4rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
   
-    #page-auction-form main footer p {
+    #page-auction-register main footer p {
       justify-content: space-between;
     }
   
-    #page-auction-form main footer button {
+    #page-auction-register main footer button {
       width: 20rem;
       margin-top: 0;
     }

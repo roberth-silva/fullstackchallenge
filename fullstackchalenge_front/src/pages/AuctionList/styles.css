@@ -75,6 +75,11 @@
   padding: 0 1.6rem;
 }
 
+#page-auction-form main footer .info{
+  width: 80%;
+  justify-content: space-evenly;
+}
+
 #page-auction-form main fieldset table .rowData a{
   cursor: pointer;
 }

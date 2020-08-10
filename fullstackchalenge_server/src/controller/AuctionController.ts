@@ -22,7 +22,7 @@ class AuctionController{
         //A query muda caso exista um query param de id
         if (Number(id) > 0){
             auctions = await db('auctions')
-            .where('auctions.id', id)     
+            .where('auctions.id', id)
             .join('users', 'auctions.user_id', '=','users.id')            
             .select(
                 [

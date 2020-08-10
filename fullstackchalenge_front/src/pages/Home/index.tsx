@@ -1,5 +1,8 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
+import { Link } from 'react-router-dom';
+import { DiGithubBadge } from 'react-icons/di';
+import { FiLinkedin } from 'react-icons/fi';
 
 const Home = () => {
     return (
@@ -27,10 +30,15 @@ const Home = () => {
                         </ul>
                 </fieldset>
                 <footer>
-                    <p>                
-                        Algum Texto aqui, possivelmente os meus contatos
-                    </p>
-                </footer>            
+                    <div className="info">
+                        <a target="_blank" href="https://github.com/roberth-silva" > 
+                            <DiGithubBadge size={30} color={"#4169E1"} />
+                        </a>
+                        <a target="_blank" href="https://www.linkedin.com/in/roberth-silva-a1818b46/" > 
+                            <FiLinkedin size={30} color={"#4169E1"} />
+                        </a>
+                    </div>
+                </footer>
             </main>
             
         </div>

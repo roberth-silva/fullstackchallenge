@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import "./styles.css";
@@ -20,11 +20,19 @@ const PageHeader: React.FC<PageHeaderProps> = ({
   description,
 }) => {
 
-  const history = useHistory();
+  const user = localStorage.getItem('login')
+  const history = useHistory();  
+
+  useEffect(() => {    
+    console.log(user);
+    if(!user){
+      history.push('/');
+    }
+  }, []);
 
   function handleLogout(){
       localStorage.clear();
-      history.push('/login');
+      history.push('/');
   }
 
   
@@ -40,7 +48,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         <strong>{title}</strong>
         {description && <p>{description}</p>}
         <div className="low-bar-container">
-          <Link to="/" >
+          <Link to="/home" >
             <BsFillHouseFill size={30} />
           </Link>
           <Link to="/leilao">                   

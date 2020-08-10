@@ -59,12 +59,18 @@
   #page-auction-form main label {
     color: var(--color-text-complement);
   }
-  
+
+    
   #page-auction-form main footer {
     padding: 4rem 2.4rem;
     background: var(--color-box-footer);
     border-top: 1px solid var(--color-line-in-white);
     margin-top: 6.4rem;
+  }
+
+  #page-auction-form main footer .info{
+    width: 80%;
+    justify-content: space-evenly;
   }
   
   #page-auction-form main footer p {
