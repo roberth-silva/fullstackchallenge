@@ -27,6 +27,30 @@ class UserController{
 
         return response.json(users);
     }
+
+    async logon(request: Request, response: Response){
+
+        const {
+            login,
+            pass
+        } = request.body;
+
+        const users = await db('users')
+        .where({
+            login: login,
+            pass: pass,            
+          }).select('users.id','users.login','users.status');
+
+          const serializedUser = users.map(user => {
+            return {
+                id: user.id,
+                login: user.name,
+                status: user.status
+            }
+        });
+
+        return response.json(serializedUser);
+    }
 }
 
 export default UserController;

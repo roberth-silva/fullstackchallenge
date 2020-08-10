@@ -1,47 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import logoJobs from '../../assets/images/jobs.png';
 
-import './styles.css';
+import api from '../../services/api';
+
+import './styles2.css';
 
 const Login = () => {
     const [login, setLogin] = useState('');
     const [pass, setPass] = useState('');
 
-    return(
-        <div id="page-home">
-            <div className="content">
-                <main>
-                    <h1>Desafio FullStack</h1>
-                    <p>Leia o edital, faça sua inscrição e concorra a uma de nossas vagas</p>
+    async function handleLogin(e: FormEvent){
+        e.preventDefault();
+
+        const response = await api.post('/logon', {
+            login: login,
+            pass: pass
+        });
+
+        /**ARRUMAR AQUIII - CONTINUAR*/
+    }
+
+    return(        
+        <div className="logon-container">
+            <section className="form">                
+                <form onSubmit={handleLogin}>
+                    <h1>Faça seu logon</h1>
 
                     <input 
-                        placeholder="Usuário" 
+                        placeholder="Login"
                         value={login}
                         onChange = {e => setLogin(e.target.value)}
                     />
+
                     <input 
-                        placeholder="Senha" 
+                        placeholder="Senha"
+                        type="password"
                         value={pass}
-                        type='password'
                         onChange = {e => setPass(e.target.value)}
                     />
                     <button className="button" type="submit">Entrar</button>
 
-                    <Link to="/">
-                        <span>
-                            <FiLogIn />
-                        </span>
-                        <strong>Entrar</strong>
+                    <Link className="back-link" to="/registro">
+                        <FiLogIn size={16} color="#E02041" />
+                        Não tenho cadastro
                     </Link>
-                </main>                
-            </div>
-            <div className="logo">
-                <img src={logoJobs} alt="Vagas" />
-            </div>
-        </div>        
+                </form>
+            </section>
+
+            <img src={logoJobs} alt="Heroes" />
+        </div>
     );
 }
 

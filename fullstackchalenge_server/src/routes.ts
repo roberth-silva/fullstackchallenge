@@ -20,5 +20,6 @@ routes.post('/items', itemAuctionController.create);
 routes.delete('/items/:id', itemAuctionController.delete);
 
 routes.get('/usuarios', userController.index);
+routes.post('/logon', userController.logon);
 
 export default routes;
