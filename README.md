@@ -42,7 +42,7 @@ https://github.com/roberth-silva/fullstackchallenge.git
 Entre no repositório clonado e em seu diretório correspondente ao projeto web/server
 ```
 cd .fullstackchallenge/fullstackchalenge_server
-cd .fullstackchallenge\fullstackchalenge_front
+cd .fullstackchallenge/fullstackchalenge_front
 
 E para cada diretorio, siga com a instalação das dependências
 
@@ -57,6 +57,9 @@ Instale as dependências e starte 🚀
 
 # Starta o servidor web para a aplicação
 > npm start 
+
+# Starta o server backend para recebimento de requisições
+> npm run dev
 ```
 
 ##### YARN
@@ -65,7 +68,10 @@ Instale as dependências e starte 🚀
 > yarn install 
 
 # Starta o servidor web para a aplicação
-> yarn start 
+> yarn start
+
+# Starta o server backend para recebimento de requisições
+> yarn dev
 ```
 
 ---
