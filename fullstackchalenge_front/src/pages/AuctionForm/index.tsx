@@ -26,6 +26,10 @@ const AuctionForm = () => {
         { item: '', value: 0, type: '' }
     ]);
 
+    function validateForm() {
+        return name.length > 0 && status.length > 0;
+    }
+
     function addNewAuctionItem() {
         setAuctionItems([...auctionItems, { item: '', value: 0, type: '' }]);
     }
@@ -42,7 +46,7 @@ const AuctionForm = () => {
             items: auctionItems
         });
 
-        history.push('/leiloes');
+        history.push('/leiloes');        
     }
 
     function setAuctionItemValue(pos: number, field: string, value: string) {        
@@ -157,7 +161,11 @@ const AuctionForm = () => {
                         Importante! <br />
                         Preencha todos os dados
                         </p>
-                        <button type="submit">Salvar cadastro</button>
+                        <button 
+                            type="submit" 
+                            disabled={!validateForm()}
+                        >Salvar cadastro
+                        </button>
                     </footer>
                 </form>
             </main>            

@@ -12,6 +12,10 @@ const UserRegister = () => {
     const [login, setLogin] = useState('');
     const [pass, setPass] = useState('');
 
+    function validateForm() {
+        return login.length > 0 && pass.length > 0;
+    }
+
     
     async function handleCreateUser(e: FormEvent){
         e.preventDefault();
@@ -60,7 +64,7 @@ const UserRegister = () => {
 
                         <footer>
                             <a href="/">Voltar</a>
-                            <button type="submit">Salvar cadastro</button>
+                            <button type="submit" disabled={!validateForm()}>Salvar cadastro</button>
                         </footer>
                     </form>                
             </main>

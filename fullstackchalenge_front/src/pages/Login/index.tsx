@@ -20,6 +20,10 @@ const Login = () => {
 
     const history = useHistory();
 
+    function validateForm() {
+        return login.length > 0 && pass.length > 0;
+    }
+
     async function handleLogin(e: FormEvent){
         e.preventDefault();
 
@@ -55,7 +59,11 @@ const Login = () => {
                         value={pass}
                         onChange = {e => setPass(e.target.value)}
                     />
-                    <button className="button" type="submit">Entrar</button>
+                    <button                        
+                        type="submit"
+                        className="button"
+                        disabled={!validateForm}
+                    >Entrar</button>
 
                     <Link className="back-link" to="/registro">
                         <FiLogIn size={16} color="#E02041" />
