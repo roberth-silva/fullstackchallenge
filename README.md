@@ -5,7 +5,7 @@ Projeto de implementação para o desafio fullstack
 <a href='#apresentacao'>Apresentação </a>|
 <a href='#funcionalidades'>Funcionalidades </a>|
 <a href='#tecnologias'>Tecnologias </a>|
-<a href='#instalacao'>Instalação </a>|
+<a href='#instalacao'>Instalação </a>
 </div>
 
 ### Web Screenshot
