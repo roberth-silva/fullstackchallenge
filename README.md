@@ -20,7 +20,7 @@ Projeto de implementação para o desafio fullstack
 </div>
 
 ## <p id='apresentacao'>Apresentação</p>
-Projeto desenvolvido solucionar o desafio técnico proposto para a vaga de desenvolvedor FullStack.
+Projeto desenvolvido para o o desafio FullStack.
 ---
 
 ## <p id='funcionalidades'> ⚙ Funcionalidades </p>
