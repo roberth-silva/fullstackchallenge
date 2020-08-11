@@ -82,6 +82,5 @@ $ yarn start
 ```
 A aplicação executará no seguinte endereço http://localhost:3001/ ou em outra porta que o framework escolher.
 
-```
 
----
+Desenvolvido por [Roberth Silva](https://github.com/roberth-silva) 🚀.
