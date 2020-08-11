@@ -48,41 +48,40 @@ Clone o repositório:
 https://github.com/roberth-silva/fullstackchallenge.git
 ```
 
-### Start
+### 📦 Executar Backend
 
-Entre no repositório clonado e em seu diretório correspondente ao projeto web/server
-```
-cd .fullstackchallenge/fullstackchalenge_server
-cd .fullstackchallenge/fullstackchalenge_front
-
-E para cada diretorio, siga com a instalação das dependências
-
-```
-
-Instale as dependências e starte 🚀
-
-##### NPM
 ```bash
-# Instala todas as dependências
-> npm install 
+# Entre na pasta do servidor
+$ cd fullstackchallenge/fullstackchalenge_server
 
-# Starta o servidor web para a aplicação
-> npm start 
+# Instalar as dependencias
+$ yarn install
+ou
+$ npm install
 
-# Starta o server backend para recebimento de requisições
-> npm run dev
+# Executar a aplicação
+$ yarn dev
+ou
+$ npm run dev
 ```
+Accesso a API pelo endereço http://localhost:3000
 
-##### YARN
+### 💻 Executar o projeto frontend
+
 ```bash
-# Instala todas as dependências
-> yarn install 
+# Entre na pastad a aplicação web
+$ cd fullstackchallenge/fullstackchalenge_front
 
-# Starta o servidor web para a aplicação
-> yarn start
+# Instale as dependências
+$ yarn install
+ou
+$ npm install
 
-# Starta o server backend para recebimento de requisições
-> yarn dev
+# Execute a aplicação
+$ yarn start
+```
+A aplicação executará no seguinte endereço http://localhost:3001/ ou em outra porta que o framework escolher.
+
 ```
 
 ---
