@@ -79,6 +79,8 @@ $ npm install
 
 # Execute a aplicação
 $ yarn start
+ou
+$ npm start
 ```
 A aplicação executará no seguinte endereço http://localhost:3001/ ou em outra porta que o framework escolher.
 
