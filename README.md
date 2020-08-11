@@ -8,6 +8,17 @@ Projeto de implementação para o desafio fullstack
 <a href='#instalacao'>Instalação </a>|
 </div>
 
+### Web Screenshot
+<div>
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao1.PNG" width="350px" height="250px">
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao6.PNG" width="350px" height="250px">
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao2.PNG" width="350px" height="250px">
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao3.PNG" width="350px" height="250px">
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao4.PNG" width="350px" height="250px">
+   <img src="https://github.com/roberth-silva/fullstackchallenge/blob/master/appleilao5.PNG" width="350px" height="250px">
+   
+</div>
+
 ## <p id='apresentacao'>Apresentação</p>
 Projeto desenvolvido solucionar o desafio técnico proposto para a vaga de desenvolvedor FullStack.
 ---
