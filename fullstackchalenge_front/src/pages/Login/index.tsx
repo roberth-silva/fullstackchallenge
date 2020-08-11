@@ -2,8 +2,7 @@ import React, { useState, FormEvent } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
-import logoJobs from '../../assets/images/jobs.png';
-import leilao from '../../assets/images/leilao2.png';
+import leilao from '../../assets/images/leilao1.png';
 
 import api from '../../services/api';
 
@@ -41,7 +40,7 @@ const Login = () => {
         <div className="logon-container">
             <section className="form">                
                 <form onSubmit={handleLogin}>
-                    <h1>Desafio FullStack</h1>
+                    <h1>Leilão Online</h1>
                     <h3>Entre com login e senha</h3>
 
                     <input 
@@ -65,7 +64,7 @@ const Login = () => {
                 </form>                
             </section>
             
-            <img src={leilao} alt="Heroes" />            
+            <img src={leilao} alt="Leilão Logo" />
         </div>
     );
 }
