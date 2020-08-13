@@ -8,7 +8,7 @@ import UserEdit from "./pages/UserEdit";
 import UserRegister from "./pages/UserRegister";
 import AuctionList from "./pages/AuctionList";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/Login3";
 import AuctionDetail from "./pages/AuctionDetail";
 import AuctionEdit from "./pages/AuctionEdit";
 import AuctionDelete from "./pages/AuctionDelete";

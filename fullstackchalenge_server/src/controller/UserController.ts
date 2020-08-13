@@ -54,7 +54,7 @@ class UserController{
                 login: user.login,
                 pass: user.pass,
                 status: user.status,
-                created_at: user.created_at,                
+                created_at: user.created_at,
                 updated_at: user.updated_at
             }
         });
