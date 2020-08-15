@@ -35,6 +35,7 @@ const Login = () => {
         const user:User = response.data[0];
         
         if(user){
+            localStorage.setItem('user_id', String(user.id));
             localStorage.setItem('login', user.login);
             history.push('/home');
         }

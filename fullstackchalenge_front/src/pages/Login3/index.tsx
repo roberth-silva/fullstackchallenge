@@ -20,11 +20,8 @@ const Login3 = () => {
 
     const history = useHistory();    
 
-    async function handleLogin(e: FormEvent){
-        console.log('ok');
+    async function handleLogin(e: FormEvent){        
         e.preventDefault();
-
-        
 
         const response = await api.post('/logon', {
             login: login,
@@ -34,6 +31,7 @@ const Login3 = () => {
         const user:User = response.data[0];
         
         if(user){
+            localStorage.setItem('user_id', String(user.id));
             localStorage.setItem('login', user.login);
             history.push('/home');
         }

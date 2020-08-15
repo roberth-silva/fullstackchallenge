@@ -1,8 +1,8 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader';
-import { Link } from 'react-router-dom';
-import { DiGithubBadge } from 'react-icons/di';
+import { FcCheckmark } from 'react-icons/fc';
 import { FiLinkedin } from 'react-icons/fi';
+import { DiGithubBadge } from 'react-icons/di';
 
 const Home = () => {
     return (
@@ -16,17 +16,17 @@ const Home = () => {
                     <legend>Implementação do Sistema de Leilão</legend>
                     <h3>Desenvolvedor: <strong>Roberth Adam da Silva</strong></h3><br/>
 
-                    <p><strong>Funcionalidades satisfeitas:</strong></p>
+                    <h3><strong>Funcionalidades satisfeitas:</strong></h3><br/>
                         <ul>
-                            <li>Login com autenticação na aplicação para acesso as funcionalidades</li>
-                            <li>Usuários desativados não acessam o sistema</li>
-                            <li>Logout da aplicação</li>
-                            <li>Bloqueio das funcionalidades pós-logout</li>
-                            <li>Cadastro de leilão</li>
-                            <li>Listagem dos leilões</li>
-                            <li>Visualiação de leilão</li>
-                            <li>Edição de leilão</li>
-                            <li>Exclusão de leilão</li>
+                            <li>Login com autenticação na aplicação para acesso as funcionalidades <FcCheckmark /></li>
+                            <li>Usuários desativados não acessam o sistema <FcCheckmark /></li>
+                            <li>Logout da aplicação <FcCheckmark /></li>
+                            <li>Bloqueio das funcionalidades pós-logout <FcCheckmark /></li>
+                            <li>Cadastro de leilão <FcCheckmark /></li>
+                            <li>Listagem dos leilões <FcCheckmark /></li>
+                            <li>Visualização de leilão <FcCheckmark /></li>
+                            <li>Edição de leilão <FcCheckmark /></li>
+                            <li>Exclusão de leilão <FcCheckmark /></li>
                         </ul>
                 </fieldset>
                 <footer>

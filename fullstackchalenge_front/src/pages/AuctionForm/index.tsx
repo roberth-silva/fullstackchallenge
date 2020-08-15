@@ -16,6 +16,7 @@ import { useHistory } from 'react-router-dom';
 const AuctionForm = () => {
 
     const history = useHistory();
+    const user_id = localStorage.getItem('user_id');
 
     const [name, setName] = useState('');
     const [status, setStatus] = useState('');
@@ -40,7 +41,7 @@ const AuctionForm = () => {
         const result = await api.post('leiloes', {
             name: name,
             status:status,
-            user_id: 1,
+            user_id: user_id,
             startdate: startdate,
             enddate: enddate,
             items: auctionItems

@@ -40,7 +40,7 @@ const AuctionList = () => {
     }
 
     return (
-        <div id="page-auction-form" className="container">
+        <div id="page-auction-list" className="container">
             <PageHeader
                 title="FullStack Challenge"
                 description="Listagem de Leilões"

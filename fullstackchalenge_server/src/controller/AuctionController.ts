@@ -73,7 +73,9 @@ class AuctionController{
             status,
 
             items
-        } = request.body;        
+        } = request.body;
+        
+        console.log(request.body);
 
         /**Precisaremos de uma trasação nesse métodos, pois iremos inserir registros em duas tabelas diferentes */
         const trx = await db.transaction();

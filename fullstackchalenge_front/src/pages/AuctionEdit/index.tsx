@@ -8,13 +8,17 @@ import { FaEdit, FaTrashAlt, FaPlus } from 'react-icons/fa';
 import './styles.css';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
-import { Console } from 'console';
 import { useHistory } from 'react-router-dom';
 
 const AuctionEdit = () => {
 
     const id = localStorage.getItem('auctionId');
     const history = useHistory();
+
+    const [auctionName, setAuctionName] = useState('');
+    const [status, setStatus] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
 
     const [idItem, setIdItem] = useState(0);
     const [descItem, setDescItem] = useState('');
@@ -75,6 +79,10 @@ const AuctionEdit = () => {
         console.log(items.filter(item => item.id !== Number(idItem)));
     }
 
+    async function handleEditAuction(e: FormEvent){
+        e.preventDefault();
+    }
+
     function handleBackList(){
         history.push('/leiloes');
     }
@@ -91,33 +99,57 @@ const AuctionEdit = () => {
                 </fieldset>
 
                 <fieldset>
-                    <label>Leilão: </label>
-                    <label>{auction.name}</label>
-                    <br/>
+                    <form onSubmit={handleEditAuction}>
+                        <Input
+                            name="leilao"
+                            label="Leilão"
+                            value={auction.name}
+                            onChange={(e) =>
+                                setDescItem(e.target.value)
+                            }
+                        />
 
-                    <label>Status: </label>
-                    <label>{auction.status}</label>
-                    <br/>
+                        <Select
+                            name="status"
+                            label="Status do Leilão"
+                            value={auction.status}
+                            onChange={(e) => setStatus(e.target.value)}
+                            options={[
+                                { value: 'ABERTO', label: 'ABERTO' },
+                                { value: 'FECHADO', label: 'FECHADO' }                    
+                            ]}
+                        />
 
-                    <label>Data de Abertura: </label>
-                    <label>{auction.startdate}</label>
-                    <br/>
+                        <Input
+                            name="startdate"
+                            label="Data de Abertura"
+                            value={auction.startdate}
+                            onChange={(e) =>
+                                setStartDate(e.target.value)
+                            }
+                        />
 
-                    <label>Data de Encerramento: </label>
-                    <label>{auction.enddate}</label>
-                    <br/>
-
-                    <label>Responsável: </label>
-                    <label>{auction.login}</label>
-                    <br/>
+                        <Input
+                            name="enddate"
+                            label="Data de Encerramento"
+                            value={auction.enddate}
+                            onChange={(e) =>
+                                setEndDate(e.target.value)
+                            }
+                        />
+                        <button type="submit">Atualizar</button>
+                    </form>
                 </fieldset>
 
                 <fieldset>
+                    <legend>
+                        Adicionar Novo Item ao Leilão
+                    </legend>
                     <form onSubmit={handleAddItem}>
                         <div className="auction-item">
                             <Input
                                 name="item"
-                                label="Descricao do Item"                                
+                                label="Descrição do Item"
                                 value={descItem}
                                 onChange={(e) =>
                                     setDescItem(e.target.value)
@@ -147,17 +179,16 @@ const AuctionEdit = () => {
                                     ]
                                 }
                             />
-                            <button type="submit">
+                            <button>
                                 <FaPlus size={20} color={"#00008B"} />
                             </button>
                         </div>
                     </form>
                 </fieldset>
 
-                <fieldset>
-                    
+                <fieldset>                    
                         <legend>
-                            Itens do Leilão
+                            Listagem de Itens do Leilão
                         </legend>
                         <table>
                             <thead>
