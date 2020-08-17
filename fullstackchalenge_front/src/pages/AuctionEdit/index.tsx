@@ -46,6 +46,11 @@ const AuctionEdit = () => {
             const response = await api.get(`leiloes/${id}`);
             setAuction(response.data[0]);
 
+            setAuctionName(auction.name);
+            setStatus(auction.status);
+            setStartDate(auction.startdate);
+            setEndDate(auction.enddate);
+
             const response2 = await api.get(`items/${id}`);
             setItems(response2.data);
         }
@@ -70,17 +75,25 @@ const AuctionEdit = () => {
 
         const response = await api.delete(`/items/${idItem}`);
 
-        console.log(idItem);
-
-        setItems(items.filter(item => item.id !== Number(idItem)));
-
-
-        console.log(items);
-        console.log(items.filter(item => item.id !== Number(idItem)));
+        setItems(items.filter(item => item.id !== Number(idItem)));        
     }
 
     async function handleEditAuction(e: FormEvent){
         e.preventDefault();
+        
+        const response = await api.put('/leiloes', {
+            id,
+            name: auction.name,
+            status: auction.status,
+            startDate: auction.startdate,
+            endDate: auction.enddate
+        });
+
+        if (response.status === 200){
+            history.push('/leiloes');
+        }else{
+            alert('Ocorreu um erro ao editar os dados do leilão');
+        }
     }
 
     function handleBackList(){
@@ -104,8 +117,15 @@ const AuctionEdit = () => {
                             name="leilao"
                             label="Leilão"
                             value={auction.name}
-                            onChange={(e) =>
-                                setDescItem(e.target.value)
+                            onChange={(e) =>                                
+                                setAuction({
+                                    id: auction.id,
+                                    name: e.target.value,
+                                    status: auction.status,
+                                    startdate: auction.startdate,
+                                    enddate: auction.enddate,
+                                    login: auction.login
+                                })
                             }
                         />
 
@@ -113,7 +133,16 @@ const AuctionEdit = () => {
                             name="status"
                             label="Status do Leilão"
                             value={auction.status}
-                            onChange={(e) => setStatus(e.target.value)}
+                            onChange={(e) => 
+                                setAuction({
+                                    id: auction.id,
+                                    name: auction.name,
+                                    status: e.target.value,                                    
+                                    startdate: auction.startdate,
+                                    enddate: auction.enddate,
+                                    login: auction.login
+                                })
+                            }
                             options={[
                                 { value: 'ABERTO', label: 'ABERTO' },
                                 { value: 'FECHADO', label: 'FECHADO' }                    
@@ -124,8 +153,16 @@ const AuctionEdit = () => {
                             name="startdate"
                             label="Data de Abertura"
                             value={auction.startdate}
+                            type="date"
                             onChange={(e) =>
-                                setStartDate(e.target.value)
+                                setAuction({
+                                    id: auction.id,
+                                    name: auction.name,
+                                    status: auction.status,
+                                    startdate: e.target.value,
+                                    enddate: auction.enddate,
+                                    login: auction.login
+                                })
                             }
                         />
 
@@ -133,8 +170,16 @@ const AuctionEdit = () => {
                             name="enddate"
                             label="Data de Encerramento"
                             value={auction.enddate}
+                            type="date"
                             onChange={(e) =>
-                                setEndDate(e.target.value)
+                                setAuction({
+                                    id: auction.id,
+                                    name: auction.name,
+                                    status: auction.status,
+                                    startdate: auction.startdate,
+                                    enddate: e.target.value,
+                                    login: auction.login
+                                })
                             }
                         />
                         <button type="submit">Atualizar</button>

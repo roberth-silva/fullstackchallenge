@@ -13,6 +13,7 @@ const userController = new UserController();
 routes.get('/leiloes', auctionController.index);
 routes.get('/leiloes/:id', auctionController.index);
 routes.post('/leiloes', auctionController.create);
+routes.put('/leiloes', auctionController.edit);
 routes.delete('/leiloes/:id', auctionController.delete);
 
 routes.get('/items/:auction_id', itemAuctionController.index);

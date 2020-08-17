@@ -56,6 +56,7 @@ const User = () => {
                                 <th>Status</th>
                                 <th>Data de Cadastro</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>

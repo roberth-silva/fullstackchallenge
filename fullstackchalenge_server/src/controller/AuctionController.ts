@@ -74,8 +74,6 @@ class AuctionController{
 
             items
         } = request.body;
-        
-        console.log(request.body);
 
         /**Precisaremos de uma trasação nesse métodos, pois iremos inserir registros em duas tabelas diferentes */
         const trx = await db.transaction();
@@ -121,6 +119,39 @@ class AuctionController{
             });
         }
     }
+
+    /**EDITAR LEILÃO */
+    async edit(request: Request, response: Response){
+        const {
+            id,            
+            name,
+            status,
+            startDate,
+            endDate
+        } = request.body;
+
+        console.log(id,name,status,startDate,endDate);
+
+        try {            
+            const rowsAffected = await db('auctions')
+            .where('auctions.id', id)
+            .update({
+                name,
+                status,
+                startDate,
+                endDate
+            });
+
+            /**API aqui então, retorna mensagem de sucesso para o usuário */
+            return response.status(200).send();
+            
+        } catch (error) {
+            /**Se algum erro acontecer no meio do caminho retorna mensagem de Bad Request */            
+            return response.status(400).json({
+                error: "Unexpected error while editing auction"
+            });
+        }
+     }
 
      /**EXCLUIR LEILÃO */
      async delete(request: Request, response: Response){
