@@ -15,9 +15,7 @@ import { useHistory } from 'react-router-dom';
 interface User{
     id: number;
     login: string;
-    pass: string;
     status: string;
-    created_at: string;
     updated_at: string;
 }
 
@@ -26,34 +24,30 @@ const UserEdit = () => {
     const id = localStorage.getItem('userId');
     const history = useHistory();
 
-    const [status, setStatus] = useState('');
-
-    const [user, setUser] = useState<User[]>([]);
-
-    // const [user, setUser] = useState([{
-    //     id: 0, login: '', pass:'',status:'', created_at:'', updated_at:''
-    // }]);
+    const [user, setUser] = useState<User>();
 
     useEffect(() => {
         async function loadUser(){
             const response = await api.get(`usuarios/${id}`);
-            console.log(response.data[0].status);
             setUser(response.data[0]);
         }
         loadUser();
     }, []);
-
-    
 
     async function handleUpdateUser(e: FormEvent){
         e.preventDefault();
 
         const response = await api.put('/usuarios', {
             id: id,
-            status: status
+            login: user?.login,
+            status: user?.status
         });
 
-        setUser(response.data[0].status);
+        if (response.status === 200){
+            history.push('/usuarios');
+        }else{
+            alert('Ocorreu um erro ao editar os dados do usuário');
+        }
     }
 
     function handleBackList(){
@@ -69,20 +63,40 @@ const UserEdit = () => {
             <main>
                 <form onSubmit={handleUpdateUser}>
                 <fieldset>
-                    <legend><span><FaEdit size={25} /></span>Edição</legend>
+                    <legend><span><FaEdit size={25} /></span>Editar Usuário {user?.login}</legend>
                 </fieldset>
 
                 <fieldset>
+                    <Input
+                        name="login"
+                        label="Usuário"
+                        value={user?.login}
+                        onChange={(e) =>                                
+                            setUser({
+                                id: Number(user?.id),
+                                login: e.target.value,
+                                status: String(user?.status),
+                                updated_at: String(user?.updated_at)
+                            })
+                        }
+                    />
                     <Select
-                            name="status"
-                            label="Status"
-                            value={status}
-                            onChange={(e) => setStatus(e.target.value)}
-                            options={[
-                                { value: 'ATIVO', label: 'ATIVO' },
-                                { value: 'INATIVO', label: 'INATIVO' }
-                            ]}
-                        />                    
+                        name="status"
+                        label="Status"
+                        value={user?.status}
+                        onChange={(e) => 
+                            setUser({
+                                id: Number(user?.id),
+                                login: String(user?.login),
+                                status: e.target.value,
+                                updated_at: String(user?.updated_at)
+                            })
+                        }
+                        options={[
+                            { value: 'ATIVO', label: 'ATIVO' },
+                            { value: 'INATIVO', label: 'INATIVO' }
+                        ]}
+                    />
                     <br/>
                 </fieldset>
 

@@ -61,10 +61,10 @@ const User = () => {
                         </thead>
                         <tbody>
                             {users.map((user: User) => (
-                                <tr key={user.id}>
+                                <tr key={user.id} className="rowData">
                                     <td>{user.id}</td>
                                     <td>{user.login}</td>
-                                    <td>{user.status}</td>
+                                    <td><span className={user.status == 'ATIVO' ? 'rowBadgePrimary': 'rowBadgeDanger'}>{user.status}</span></td>
                                     <td>{user.created_at}</td>
                                     <td className="btnData">
                                         <a onClick= {() => handleEditUser(String(user.id))} >

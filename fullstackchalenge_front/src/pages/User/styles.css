@@ -94,6 +94,28 @@
   padding: 0 1.6rem;
 }
 
+#page-auction-user main fieldset table .rowData .rowBadgePrimary{  
+  display: inline-block;
+  min-width: .5rem; /* rem unit */
+  padding: .5rem 1rem; /* rem unit */
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  background: var(--color-primary);/*#1779ba;*/
+  color: #fefefe;
+}
+
+#page-auction-user main fieldset table .rowData .rowBadgeDanger{  
+  display: inline-block;
+  min-width: .5rem; /* rem unit */
+  padding: .5rem 1rem; /* rem unit */
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  background: var(--color-text-danger);/*#1779ba;*/
+  color: #fefefe;
+}
+
 #page-auction-user main fieldset table .rowData a{
   cursor: pointer;
 }

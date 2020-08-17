@@ -76,6 +76,7 @@ class UserController{
         .where({
             login: login,
             pass: newPass,
+            status: 'ATIVO'
           }).select('users.id','users.login','users.status');
 
           const serializedUser = users.map(user => {
@@ -128,27 +129,33 @@ class UserController{
     }
 
     /**Atualizar usuario */
-    /** Na verdade, aqui eu só desabilito ele */
     async edit(request: Request, response: Response){
 
         const {
             id,
+            login,
             status
         } = request.body;
 
-        const users = await db('users')
-        .where({ id: 42 })
-        .update({ status: status }, ['id', 'login', 'status'])        
+        console.log(id, login, status);
 
-        const serializedUser = users.map(user => {
-            return {
-                id: user.id,
-                login: user.login,
-                status: user.status
-            }
-        });
+        try {
+            const rowsAffected = await db('users')
+            .where('users.id', id )
+            .update({ 
+                login, 
+                status
+            });
 
-        return response.json(serializedUser); 
+        /**API aqui então, retorna mensagem de sucesso para o usuário */
+        return response.status(200).send();
+            
+        } catch (error) {
+            /**Se algum erro acontecer no meio do caminho retorna mensagem de Bad Request */            
+            return response.status(400).json({
+                error: "Unexpected error while editing user"
+            });
+        }         
     }
 
     /**EXCLUIR usuario */

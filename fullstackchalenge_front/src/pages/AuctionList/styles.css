@@ -90,6 +90,28 @@
   padding: 0 1.6rem;
 }
 
+#page-auction-list main fieldset table .rowData .rowBadgeSecondary{  
+  display: inline-block;
+  min-width: .5rem; /* rem unit */
+  padding: .5rem 1rem; /* rem unit */
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  background: var(--color-secundary-dark);/*#1779ba;*/
+  color: #fefefe;
+}
+
+#page-auction-list main fieldset table .rowData .rowBadgeDanger{
+  display: inline-block;
+  min-width: .5rem; /* rem unit */
+  padding: .5rem 1rem; /* rem unit */
+  border-radius: 50%;
+  font-size: 13px;
+  text-align: center;
+  background: var(--color-text-danger);/*#1779ba;*/
+  color: #fefefe;
+}
+
 #page-auction-list main footer .info{
   width: 80%;
   justify-content: space-evenly;

@@ -6,6 +6,7 @@ import AuctionForm from "./pages/AuctionForm";
 import User from "./pages/User";
 import UserEdit from "./pages/UserEdit";
 import UserRegister from "./pages/UserRegister";
+import UserDelete from "./pages/UserDelete";
 import AuctionList from "./pages/AuctionList";
 import Home from "./pages/Home";
 import Login from "./pages/Login3";
@@ -27,6 +28,7 @@ function Routes() {
       <Route path="/leiloes" component={AuctionList} />
       <Route path="/usuarios" component={User} />
       <Route path="/usuarioeditar/:id" component={UserEdit} />
+      <Route path="/usuarioexcluir/:id" component={UserDelete} />
       <Route path="/registro" component={UserRegister} />
     </BrowserRouter>
   );

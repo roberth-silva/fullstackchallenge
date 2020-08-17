@@ -65,7 +65,7 @@ const AuctionList = () => {
                                 <tr key={auction.id} className="rowData">
                                     <td>{auction.id}</td>
                                     <td>{auction.name}</td>
-                                    <td>{auction.status}</td>
+                                    <td><span className={auction.status == 'ABERTO' ? 'rowBadgeSecondary' : 'rowBadgeDanger'}>{auction.status}</span></td>
                                     <td>{auction.login}</td>                                    
                                     <td className="btnData">
                                         <a onClick= {() => handleDetailAuction(String(auction.id))} >

@@ -15,10 +15,10 @@ const AuctionEdit = () => {
     const id = localStorage.getItem('auctionId');
     const history = useHistory();
 
-    const [auctionName, setAuctionName] = useState('');
+    /*const [auctionName, setAuctionName] = useState('');
     const [status, setStatus] = useState('');
     const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
+    const [endDate, setEndDate] = useState('');*/
 
     const [idItem, setIdItem] = useState(0);
     const [descItem, setDescItem] = useState('');
@@ -45,11 +45,6 @@ const AuctionEdit = () => {
         async function loadAuctions(){
             const response = await api.get(`leiloes/${id}`);
             setAuction(response.data[0]);
-
-            setAuctionName(auction.name);
-            setStatus(auction.status);
-            setStartDate(auction.startdate);
-            setEndDate(auction.enddate);
 
             const response2 = await api.get(`items/${id}`);
             setItems(response2.data);
@@ -108,7 +103,9 @@ const AuctionEdit = () => {
             />
             <main>                
                 <fieldset>
-                    <legend><span><FaEdit size={25} /></span>{auction.name}</legend>
+                    <legend>
+                        <span><FaEdit size={25} /></span>LEILÃO: {auction.name}                        
+                    </legend>
                 </fieldset>
 
                 <fieldset>
